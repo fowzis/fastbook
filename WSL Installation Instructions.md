@@ -198,7 +198,16 @@ Your JupyterLab server started successfully, but the system is unable to open th
 
 ---
 
-### **3. Open JupyterLab Manually**
+### **3. Signing all notebooks to be trusted
+```bash
+# Launch JupyterLab
+jupyter trust *.ipynb
+```
+This will sign all the fastbook notebooks removing the terminal error message 'Notebook untrusted'
+
+---
+
+### **4. Open JupyterLab Manually**
 ```bash
 # Launch JupyterLab
 jupyter-lab
@@ -206,15 +215,6 @@ jupyter-lab
    - If automatic browser launching fails, you can still manually open JupyterLab:
      1. Copy the URL from the terminal (e.g., `http://localhost:8888/lab?...`).
      2. Paste it into your browser's address bar.
-
----
-
-### **4. Ensure Basic Command-Line Browsing Tools**
-   - Optional: If you'd like basic tools like `lynx`, `w3m`, or `links`, you can install them:
-     ```bash
-     sudo apt install lynx
-     sudo apt install w3m
-     ```
 
 ---
 
