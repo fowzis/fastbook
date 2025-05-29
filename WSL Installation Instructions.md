@@ -210,7 +210,7 @@ This will sign all the fastbook notebooks removing the terminal error message 'N
 ### **4. Open JupyterLab Manually**
 ```bash
 # Launch JupyterLab
-jupyter-lab
+jupyter-lab --allow-root
 ```
    - If automatic browser launching fails, you can still manually open JupyterLab:
      1. Copy the URL from the terminal (e.g., `http://localhost:8888/lab?...`).
