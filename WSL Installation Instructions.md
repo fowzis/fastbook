@@ -218,5 +218,4 @@ jupyter-lab --allow-root
 
 ---
 
-
 These steps should fix the browser-related issues and make opening JupyterLab much smoother. Let me know if you encounter anything else! 🚀
