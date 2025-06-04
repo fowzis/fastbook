@@ -4,8 +4,8 @@ The following are the instruction to install an use fastbook notebook and Jupyte
 ## System Wide Setup
 ```bash
 # Upgrade pip
-sudo apt install python3 python3-pip python3-venv
-sudo apt upgrade python3 python3-pip python3-venv
+sudo apt install python3 python3-pip python3-venv python3-tk
+sudo apt upgrade python3 python3-pip python3-venv python3-tk
 sudo apt install git
 sudo apt autoremove
 
@@ -21,13 +21,13 @@ git clone https://github.com/fowzis/fastbook.git
 cd fastbook
 
 # Create a virtual environment
-python -m venv fastbook-env
+python3 -m venv venv
 
 # Activate the virtual environment
 # On Linux/macOS:
-source fastbook-env/bin/activate
+source venv/bin/activate
 # On Windows:
-fastbook-env\Scripts\activate
+venv\Scripts\activate
 
 pip install --upgrade pip
 
@@ -47,6 +47,12 @@ pip install -r requirements.txt
 ## PyTorch GPU Check
 To check if PyTorch can utilize your GPU, you can run the following simple Python script:
 While the fastbook-env virtual environment is activated, run python3 and add the following script to it or add a JupyterLab Cell with the following python code
+```python
+import torch; print(f"CUDA is {'available. PyTorch can use the GPU!\nGPU Name: ' + torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'not available. PyTorch is using the CPU.'}")
+```
+
+or
+
 ```python
 import torch
 
@@ -114,13 +120,21 @@ You’re all set to start coding in your Jupyter notebook within the JupyterLab 
 ### **1. Verify `ipywidgets` Installation**
    - Make sure you have `ipywidgets` installed in your environment:
      ```bash
-     pip install ipywidgets
+     pip install jupyterlab_widgets
      ```
    - If you're using JupyterLab, also install the JupyterLab extension for `ipywidgets`:
      ```bash
+     pip install ipywidgets
+
+     or (Depricated)
      jupyter labextension install @jupyter-widgets/jupyterlab-manager
      ```
    - Restart JupyterLab after installing the extension.
+     ```bash
+     jupyter labextension list
+     jupyter notebook stop
+     jupyter notebook
+     ```
 
 ### **2. Enable the Widgets Extension**
    - Verify that widgets are enabled:
@@ -217,5 +231,7 @@ jupyter-lab --allow-root
      2. Paste it into your browser's address bar.
 
 ---
+
+pip install --upgrade fastbook
 
 These steps should fix the browser-related issues and make opening JupyterLab much smoother. Let me know if you encounter anything else! 🚀

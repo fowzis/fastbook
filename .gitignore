@@ -9,6 +9,7 @@ __pycache__/
 .gitconfig
 .ipynb_checkpoints/
 fastbook-env/
+venv/
 .ipynb
 # Ignore Jupyter Notebook checkpoints
 # Ignore Python bytecode files
